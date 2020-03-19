@@ -10,9 +10,7 @@ export default (state, action) => {
     case 'ADD_TRANSACTION':
       return {
         ...state,
-        transactions: state.transactions.filter(
-          transaction => transaction.id !== action.payload
-        )
+        transactions: [action.payload, ...state.transactions]
       };
     default:
       return state;
